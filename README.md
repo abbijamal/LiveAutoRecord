@@ -1,47 +1,31 @@
-[![build-release](https://github.com/WhiteMinds/LiveAutoRecord/actions/workflows/release.yml/badge.svg)](https://github.com/WhiteMinds/LiveAutoRecord/actions/workflows/release.yml)
-[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
+Multi-platform live streaming automatic recording tool
 
-# Live Auto Record 4
+Old Version
+3.x
+Features
+The main changes in this version compared to v3:
 
-> 多平台直播自动录制工具
-
-#### Old Version
-
-- [3.x](https://github.com/WhiteMinds/LiveAutoRecord/tree/3.x)
-
-#### Features
-
-相较于 v3 版本，该版本主要的变化：
-
-- 对于使用者（包括基于模块的开发者）
-
-1. 不只能作为客户端使用，还可以服务端部署，或作为 node 模块引入。
-1. 支持以插件的方式扩展支持的直播平台。
-1. 规范了 electron 下的设计，一些逻辑从渲染进程挪到了主进程，这会解决之前的一些 bug。
-1. 不再使用 sqlite 作为 meta / comments 的存储格式，现在使用 json，并且支持从 json 中提取 comments 转换为 srt 字幕文件。
-1. 支持画质的模糊配置、源 / 流的优先级配置。
-1. 默认使用 fmp4 格式进行录制，这会减少一些 mp4、flv 格式录制时造成的问题。
-1. UI 重新设计。
-
-- 开发层面
-
-1. 完全重构，并尽量使用 ts
-1. 基于 lerna + yarn 的 monorepo
-1. 基于 ts + vue3 + vuetify + tailwindcss 的 web
-
-#### Road Map
-
-- 完善弹幕播放器的 UI
-- 完善错误处理
-- 处理一些代码中的 TODO 项
-- 提供文档
-- 增加测试
-- 简化服务端部署流程
-- i18n
-
-#### Electron Dev / Build Setup
-
-```bash
+For consumers (including module-based developers)
+Not only can it be used as a client, but it can also be deployed on the server side, or introduced as a node module.
+Support for extending supported live streaming platforms as plugins.
+Standardized the design under electron, and some logic was moved from the rendering process to the main process, which will solve some of the previous bugs.
+Instead of using SQLite as the storage format for meta / comments, JSON is now used, and comments extracted from JSON are supported to convert to SRT subtitle files.
+Support blur configuration of image quality and priority configuration of source/stream.
+The FMP4 format is used for recording by default, which will reduce some problems caused by MP4 and FLV format recording.
+UI redesign.
+Development level
+Refactor completely and use ts whenever possible
+Monorepo based on Lerna + Yarn
+Web based on TS + Vue3 + Vuetify + Tailwindcss
+Road Map
+Improve the UI of the barrage player
+Improve error handling
+Work with TODO items in some code
+Provide documentation
+Add tests
+Simplify server-side deployment
+i18n
+Electron Dev / Build Setup
 # install dependencies
 yarn
 
@@ -54,11 +38,7 @@ yarn app:dev
 
 # build electron application for production
 yarn app:build
-```
-
-#### Server Dev / Deployment Setup
-
-```bash
+Server Dev / Deployment Setup
 # install dependencies
 yarn
 
@@ -73,30 +53,3 @@ cd packages/web && yarn dev
 # deployment for production
 cd packages/http-server && yarn build && yarn start # Or start using another method, such as nodemon
 cd packages/web && yarn build # Start a web service using a tool such as nginx
-```
-
-## Screenshot
-
-#### 新增录播任务
-
-![](/readme-assets/5.png)
-
-#### 录播任务列表
-
-![](/readme-assets/1.png)
-
-#### 录播历史
-
-![](/readme-assets/2.png)
-
-<!-- #### 录播播放器 -->
-
-<!-- ![](/readme-assets/3.png) -->
-
-#### 录播播放器-网页全屏
-
-![](/readme-assets/4.png)
-
-#### 全局录播配置
-
-![](/readme-assets/6.png)
